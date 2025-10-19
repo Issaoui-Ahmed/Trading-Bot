@@ -5,7 +5,7 @@ import logging
 import requests
 
 ACTIONS_PATH = "actions.csv"
-LOG_PATH = "broker.log"
+LOG_PATH = "trading_bot.log"
 
 API_KEY = os.getenv("KRAKEN_API_KEY")
 API_SECRET = os.getenv("KRAKEN_API_SECRET")

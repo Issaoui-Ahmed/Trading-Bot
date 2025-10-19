@@ -11,7 +11,7 @@ META_SIGNALS_PATH = "meta_signals.csv"
 META_MODEL_PATH = "meta_model.json"
 META_FEATURES_PATH = "meta_features.json"
 META_LABELS_PATH = "meta_labels.json"
-LOG_PATH = "meta_inference.log"
+LOG_PATH = "trading_bot.log"
 
 logging.basicConfig(
     filename=LOG_PATH,

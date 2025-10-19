@@ -5,7 +5,7 @@ import sys
 import logging
 import os
 
-LOG_PATH = "main.log"
+LOG_PATH = "trading_bot.log"
 
 logging.basicConfig(
     filename=LOG_PATH,

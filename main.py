@@ -1,6 +1,5 @@
 import subprocess
 import time
-import signal
 import sys
 import logging
 
@@ -17,11 +16,13 @@ logging.basicConfig(
 
 processes = []
 
-def start_process(script):
-    p = subprocess.Popen(["python", script])
+def start_process(module: str) -> None:
+    """Start a Python module in a new subprocess."""
+
+    p = subprocess.Popen([sys.executable, "-m", module])
     processes.append(p)
-    logging.info(f"Started {script} (pid {p.pid})")
-    print(f"Started {script} (pid {p.pid})")
+    logging.info(f"Started {module} (pid {p.pid})")
+    print(f"Started {module} (pid {p.pid})")
 
 def stop_all():
     print("\nStopping all processes...")
@@ -36,15 +37,15 @@ def stop_all():
 
 if __name__ == "__main__":
     try:
-        start_process("data_manager.py")
+        start_process("prod_workflow.data_manager")
         time.sleep(2)
-        start_process("inference_loop.py")
+        start_process("prod_workflow.inference_loop")
         time.sleep(2)
-        start_process("meta_inference_loop.py")
+        start_process("prod_workflow.meta_inference_loop")
         time.sleep(2)
-        start_process("brain.py")
+        start_process("prod_workflow.brain")
         time.sleep(2)
-        # start_process("broker.py")
+        # start_process("prod_workflow.broker")
 
         logging.info("All processes started successfully.")
 

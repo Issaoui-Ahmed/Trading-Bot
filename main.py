@@ -5,7 +5,7 @@ import logging
 
 from _utils.config import get_env
 
-LOG_PATH = get_env("MAIN_LOG_PATH")
+LOG_PATH = get_env("TRADING_BOT_LOG_PATH")
 
 logging.basicConfig(
     filename=LOG_PATH,

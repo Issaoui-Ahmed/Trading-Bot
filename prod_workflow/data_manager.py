@@ -5,7 +5,7 @@ from datetime import datetime, UTC
 
 from fetch_ohlc import fetch
 from feature_creation import create_features
-from config import get_env, get_int_env
+from _utils.config import get_env, get_int_env
 
 FILE_PATH = get_env("DATA_PATH")
 MAX_ROWS = get_int_env("MAX_ROWS")

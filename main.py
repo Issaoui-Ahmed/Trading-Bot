@@ -4,7 +4,7 @@ import signal
 import sys
 import logging
 
-from config import get_env
+from _utils.config import get_env
 
 LOG_PATH = get_env("MAIN_LOG_PATH")
 

@@ -6,7 +6,7 @@ import os
 import numpy as np
 import logging
 
-from config import get_env
+from _utils.config import get_env
 
 SIGNALS_PATH = get_env("SIGNALS_PATH")
 META_SIGNALS_PATH = get_env("META_SIGNALS_PATH")

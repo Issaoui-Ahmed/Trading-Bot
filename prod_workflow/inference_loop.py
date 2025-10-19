@@ -5,7 +5,7 @@ import json
 import time
 import os
 
-from config import get_env
+from _utils.config import get_env
 
 SIGNALS_PATH = get_env("SIGNALS_PATH")
 DATA_PATH = get_env("DATA_PATH")

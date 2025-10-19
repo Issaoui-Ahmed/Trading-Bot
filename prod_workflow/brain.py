@@ -4,7 +4,7 @@ import os
 import uuid
 import logging
 
-from config import get_env, get_float_env, get_bool_env
+from _utils.config import get_env, get_float_env, get_bool_env
 
 META_SIGNALS_PATH = get_env("META_SIGNALS_PATH")
 ACTIONS_PATH = get_env("ACTIONS_PATH")

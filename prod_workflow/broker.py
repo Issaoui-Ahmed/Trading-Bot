@@ -8,7 +8,7 @@ import pandas as pd
 import logging
 from urllib.parse import urlencode
 
-from config import get_env
+from _utils.config import get_env
 
 ACTIONS_PATH = get_env("ACTIONS_PATH")
 LOG_PATH = get_env("BROKER_LOG_PATH")

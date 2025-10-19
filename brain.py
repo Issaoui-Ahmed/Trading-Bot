@@ -5,7 +5,7 @@ import logging
 
 META_SIGNALS_PATH = "meta_signals.csv"
 ACTIONS_PATH = "actions.csv"
-LOG_PATH = "brain.log"
+LOG_PATH = "trading_bot.log"
 
 logging.basicConfig(
     filename=LOG_PATH,

@@ -3,8 +3,8 @@ import time
 import os
 from datetime import datetime, UTC
 
-from fetch_ohlc import fetch
-from feature_creation import create_features
+from prod_workflow.fetch_ohlc import fetch
+from Feature_creation.feature_creation import create_features
 from _utils.config import get_env, get_int_env
 
 FILE_PATH = get_env("DATA_PATH")

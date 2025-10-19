@@ -13,7 +13,7 @@ DEFAULT_VOLUME = get_float_env("DEFAULT_VOLUME")
 ORDER_TYPE = get_env("ORDER_TYPE")
 TIME_IN_FORCE = get_env("TIME_IN_FORCE")
 VALIDATE = get_bool_env("VALIDATE")
-LOG_PATH = get_env("ACTION_LOG_PATH")
+LOG_PATH = get_env("TRADING_BOT_LOG_PATH")
 
 logging.basicConfig(
     filename=LOG_PATH,

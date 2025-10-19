@@ -11,7 +11,7 @@ from urllib.parse import urlencode
 from _utils.config import get_env
 
 ACTIONS_PATH = get_env("ACTIONS_PATH")
-LOG_PATH = get_env("BROKER_LOG_PATH")
+LOG_PATH = get_env("TRADING_BOT_LOG_PATH")
 KRAKEN_API_KEY = get_env("KRAKEN_API_KEY")
 KRAKEN_API_SECRET = get_env("KRAKEN_API_SECRET")
 KRAKEN_BASE_URL = "https://api.kraken.com"

@@ -43,7 +43,7 @@ if __name__ == "__main__":
         time.sleep(2)
         start_process("brain.py")
         time.sleep(2)
-        start_process("broker.py")
+        # start_process("broker.py")
 
         logging.info("All processes started successfully.")
 

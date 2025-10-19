@@ -1,0 +1,4 @@
+timestamp,decision
+1760450280,exit_long
+1760450340,enter_long
+1760451300,SOLUSD,buy,market,1.0,,,gtc,,45f0cd77-5214-4feb-ae23-3e20fc65b8c7,False,1760451372707,exit_short

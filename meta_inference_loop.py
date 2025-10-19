@@ -68,10 +68,7 @@ while True:
             "meta_signal": np.random.choice(actions, len(pending))  # random for now
         })
 
-        if os.path.exists(META_SIGNALS_PATH):
-            meta_signals.to_csv(META_SIGNALS_PATH, mode="a", header=False, index=False)
-        else:
-            meta_signals.to_csv(META_SIGNALS_PATH, index=False)
+        meta_signals.to_csv(META_SIGNALS_PATH, index=False)
 
         last_ts = pending["timestamp"].max()
         logging.info(f"Appended {len(meta_signals)} meta-signals up to {last_ts}.")

@@ -1,8 +1,0 @@
-2025-10-14 09:45:35 | INFO | Started data_manager.py (pid 16984)
-2025-10-14 09:45:37 | INFO | Started inference_loop.py (pid 52876)
-2025-10-14 09:45:39 | INFO | Started meta_inference_loop.py (pid 7372)
-2025-10-14 09:45:41 | INFO | Started brain.py (pid 24064)
-2025-10-14 09:45:43 | INFO | Started broker.py (pid 33084)
-2025-10-14 09:45:43 | INFO | All processes started successfully.
-2025-10-14 09:47:00 | INFO | Stopping all subprocesses...
-2025-10-14 09:47:01 | INFO | All subprocesses stopped.

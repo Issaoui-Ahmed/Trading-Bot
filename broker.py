@@ -1,30 +1,84 @@
-import pandas as pd
-import time
 import os
-import logging
+import time
+import hmac
+import hashlib
+import base64
 import requests
+import pandas as pd
+import logging
+from urllib.parse import urlencode
+from dotenv import load_dotenv
 
-ACTIONS_PATH = "actions.csv"
-LOG_PATH = "broker.log"
+load_dotenv()
 
-API_KEY = os.getenv("KRAKEN_API_KEY")
-API_SECRET = os.getenv("KRAKEN_API_SECRET")
+ACTIONS_PATH = os.getenv("ACTIONS_PATH", "actions.csv")
+LOG_PATH = os.getenv("BROKER_LOG_PATH", "broker.log")
+KRAKEN_API_KEY = os.getenv("KRAKEN_API_KEY")
+KRAKEN_API_SECRET = os.getenv("KRAKEN_API_SECRET")
+KRAKEN_BASE_URL = "https://api.kraken.com"
 
 logging.basicConfig(
     filename=LOG_PATH,
     level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(message)s"
+    format="%(asctime)s | %(levelname)s | %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
 )
 
-def execute_order(signal):
-    # TODO: replace with actual Kraken order logic
-    logging.info(f"Executing order: {signal}")
-    print(f"Executing order: {signal}")
-    # Example placeholder:
-    # requests.post("https://api.kraken.com/0/private/AddOrder", headers=auth_headers, data=payload)
+if not KRAKEN_API_KEY or not KRAKEN_API_SECRET:
+    raise ValueError("Missing Kraken API credentials in environment variables.")
 
 last_ts = None
-logging.info("Broker loop started.")
+logging.info("Broker started — watching for new actions.")
+
+def kraken_signature(url_path, data, secret):
+    postdata = urlencode(data)
+    encoded = (str(data['nonce']) + postdata).encode()
+    message = url_path.encode() + hashlib.sha256(encoded).digest()
+    mac = hmac.new(base64.b64decode(secret), message, hashlib.sha512)
+    sigdigest = base64.b64encode(mac.digest())
+    return sigdigest.decode()
+
+def send_order(order):
+    endpoint = "/0/private/AddOrder"
+    url = KRAKEN_BASE_URL + endpoint
+
+    data = {
+        "nonce": order["nonce"],
+        "ordertype": order["ordertype"],
+        "type": order["side"],
+        "volume": str(order["volume"]),
+        "pair": order["pair"],
+        "validate": str(order["validate"]).lower(),
+        "timeinforce": order.get("time_in_force", "gtc")
+    }
+
+    if order.get("price"):
+        data["price"] = str(order["price"])
+    if order.get("price2"):
+        data["price2"] = str(order["price2"])
+    if order.get("expiretm"):
+        data["expiretm"] = str(order["expiretm"])
+    if order.get("userref"):
+        data["userref"] = order["userref"]
+
+    headers = {
+        "API-Key": KRAKEN_API_KEY,
+        "API-Sign": kraken_signature(endpoint, data, KRAKEN_API_SECRET)
+    }
+
+    try:
+        r = requests.post(url, headers=headers, data=data, timeout=10)
+        res = r.json()
+
+        if res.get("error"):
+            logging.error(f"Order failed ({order['side']} {order['pair']}): {res['error']}")
+        else:
+            logging.info(f"Order successful: {res['result']}")
+        return res
+
+    except Exception as e:
+        logging.error(f"Order error for {order}: {e}", exc_info=True)
+        return None
 
 while True:
     try:
@@ -38,8 +92,10 @@ while True:
             continue
 
         df = df.sort_values("timestamp").reset_index(drop=True)
+
         if last_ts is None:
             last_ts = df["timestamp"].iloc[-1]
+            logging.info(f"Initialized last timestamp to {last_ts}.")
             time.sleep(5)
             continue
 
@@ -49,11 +105,14 @@ while True:
             continue
 
         for _, row in pending.iterrows():
-            signal = row["decision"]
-            execute_order(signal)
+            order = row.to_dict()
+            res = send_order(order)
+            if res:
+                print(f"Executed: {order['side']} {order['pair']} | result: {res}")
+            time.sleep(2)  # avoid hitting Kraken rate limits
 
         last_ts = pending["timestamp"].max()
-        logging.info(f"Executed {len(pending)} actions up to {last_ts}.")
+        logging.info(f"Processed {len(pending)} new actions up to {last_ts}.")
 
         time.sleep(5)
 

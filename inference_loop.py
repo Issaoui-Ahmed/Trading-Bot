@@ -4,19 +4,23 @@ import lightgbm as lgb
 import json
 import time
 import os
-from dotenv import load_dotenv
-load_dotenv()
 
-SIGNALS_PATH = os.getenv("SIGNALS_PATH")
-DATA_PATH = os.getenv("DATA_PATH")
+from config import get_env
+
+SIGNALS_PATH = get_env("SIGNALS_PATH")
+DATA_PATH = get_env("DATA_PATH")
+XGB_MODEL_PATH = get_env("XGB_MODEL_PATH")
+XGB_FEATURES_PATH = get_env("XGB_FEATURES_PATH")
+LGB_MODEL_PATH = get_env("LGB_MODEL_PATH")
+LGB_FEATURES_PATH = get_env("LGB_FEATURES_PATH")
 
 xgb_model = xgb.XGBRegressor()
-xgb_model.load_model("xgb_model.json")
-with open("features.json") as f:
+xgb_model.load_model(XGB_MODEL_PATH)
+with open(XGB_FEATURES_PATH) as f:
     xgb_features = json.load(f)
 
-lgb_model = lgb.Booster(model_file="lgb_model.txt")
-with open("features_lgb.json") as f:
+lgb_model = lgb.Booster(model_file=LGB_MODEL_PATH)
+with open(LGB_FEATURES_PATH) as f:
     lgb_features = json.load(f)
 
 last_ts = None

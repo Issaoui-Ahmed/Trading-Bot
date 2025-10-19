@@ -2,16 +2,16 @@ import pandas as pd
 import time
 import os
 from datetime import datetime, UTC
+
 from fetch_ohlc import fetch
 from feature_creation import create_features
-from dotenv import load_dotenv
-load_dotenv()
+from config import get_env, get_int_env
 
-FILE_PATH = os.getenv("DATA_PATH")
-MAX_ROWS = int(os.getenv("MAX_ROWS"))
+FILE_PATH = get_env("DATA_PATH")
+MAX_ROWS = get_int_env("MAX_ROWS")
 
-PAIR= os.getenv("PAIR")
-INTERVAL= int(os.getenv("INTERVAL"))
+PAIR = get_env("PAIR")
+INTERVAL = get_int_env("INTERVAL")
 
 
 def initialize_parquet():

@@ -7,14 +7,13 @@ import requests
 import pandas as pd
 import logging
 from urllib.parse import urlencode
-from dotenv import load_dotenv
 
-load_dotenv()
+from config import get_env
 
-ACTIONS_PATH = os.getenv("ACTIONS_PATH", "actions.csv")
-LOG_PATH = os.getenv("BROKER_LOG_PATH", "broker.log")
-KRAKEN_API_KEY = os.getenv("KRAKEN_API_KEY")
-KRAKEN_API_SECRET = os.getenv("KRAKEN_API_SECRET")
+ACTIONS_PATH = get_env("ACTIONS_PATH")
+LOG_PATH = get_env("BROKER_LOG_PATH")
+KRAKEN_API_KEY = get_env("KRAKEN_API_KEY")
+KRAKEN_API_SECRET = get_env("KRAKEN_API_SECRET")
 KRAKEN_BASE_URL = "https://api.kraken.com"
 
 logging.basicConfig(
@@ -25,7 +24,10 @@ logging.basicConfig(
 )
 
 if not KRAKEN_API_KEY or not KRAKEN_API_SECRET:
-    raise ValueError("Missing Kraken API credentials in environment variables.")
+    raise ValueError(
+        "Missing Kraken API credentials. Set KRAKEN_API_KEY and "
+        "KRAKEN_API_SECRET in your .env.key file."
+    )
 
 last_ts = None
 logging.info("Broker started — watching for new actions.")

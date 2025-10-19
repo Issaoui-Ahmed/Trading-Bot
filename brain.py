@@ -1,21 +1,19 @@
 import pandas as pd
 import time
 import os
-import json
 import uuid
 import logging
-from dotenv import load_dotenv
 
-load_dotenv()
+from config import get_env, get_float_env, get_bool_env
 
-META_SIGNALS_PATH = os.getenv("META_SIGNALS_PATH", "meta_signals.csv")
-ACTIONS_PATH = os.getenv("ACTIONS_PATH", "actions.csv")
-PAIR = os.getenv("PAIR", "SOLUSD")
-DEFAULT_VOLUME = float(os.getenv("DEFAULT_VOLUME", 1.0))
-ORDER_TYPE = os.getenv("ORDER_TYPE", "market")
-TIME_IN_FORCE = os.getenv("TIME_IN_FORCE", "gtc")
-VALIDATE = os.getenv("VALIDATE", "false").lower() == "true"
-LOG_PATH = os.getenv("ACTION_LOG_PATH", "action.log")
+META_SIGNALS_PATH = get_env("META_SIGNALS_PATH")
+ACTIONS_PATH = get_env("ACTIONS_PATH")
+PAIR = get_env("PAIR")
+DEFAULT_VOLUME = get_float_env("DEFAULT_VOLUME")
+ORDER_TYPE = get_env("ORDER_TYPE")
+TIME_IN_FORCE = get_env("TIME_IN_FORCE")
+VALIDATE = get_bool_env("VALIDATE")
+LOG_PATH = get_env("ACTION_LOG_PATH")
 
 logging.basicConfig(
     filename=LOG_PATH,

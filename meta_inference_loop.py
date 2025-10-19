@@ -6,12 +6,14 @@ import os
 import numpy as np
 import logging
 
-SIGNALS_PATH = "signals.csv"
-META_SIGNALS_PATH = "meta_signals.csv"
-META_MODEL_PATH = "meta_model.json"
-META_FEATURES_PATH = "meta_features.json"
-META_LABELS_PATH = "meta_labels.json"
-LOG_PATH = "trading_bot.log"
+from config import get_env
+
+SIGNALS_PATH = get_env("SIGNALS_PATH")
+META_SIGNALS_PATH = get_env("META_SIGNALS_PATH")
+META_MODEL_PATH = get_env("META_MODEL_PATH")
+META_FEATURES_PATH = get_env("META_FEATURES_PATH")
+META_LABELS_PATH = get_env("META_LABELS_PATH")
+LOG_PATH = get_env("META_LOG_PATH")
 
 logging.basicConfig(
     filename=LOG_PATH,

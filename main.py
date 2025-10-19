@@ -3,9 +3,10 @@ import time
 import signal
 import sys
 import logging
-import os
 
-LOG_PATH = "trading_bot.log"
+from config import get_env
+
+LOG_PATH = get_env("MAIN_LOG_PATH")
 
 logging.basicConfig(
     filename=LOG_PATH,

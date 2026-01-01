@@ -1,0 +1,4 @@
+Broker Debug: Input TS=1672531200.0, Converted=2023-01-01 00:00:00, IndexType=datetime64[ns], SampleIndex=2023-01-01 00:00:00\nBROKER_DEBUG: InputTS=2023-01-01 00:00:00 FoundAt=0 Next=1
+BROKER_DEBUG: Executing at TS=2023-01-01 00:01:00 Price=101.0
+Broker Debug: Input TS=1672531200.0, Converted=2023-01-01 00:00:00, IndexType=datetime64[ns], SampleIndex=2023-01-01 00:00:00\nBROKER_DEBUG: InputTS=2023-01-01 00:00:00 FoundAt=0 Next=1
+BROKER_DEBUG: Executing at TS=2023-01-01 00:01:00 Price=101.0

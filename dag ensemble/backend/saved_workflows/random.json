@@ -1,0 +1,377 @@
+{
+    "nodes": [
+        {
+            "id": "node_1767213981505_whn0wnus4",
+            "type": "randomAction",
+            "position": {
+                "x": 630.2592462397345,
+                "y": 747.7520834118802
+            },
+            "data": {
+                "label": "randomAction node",
+                "isExecuting": false,
+                "executionTime": 0.22,
+                "latestData": {
+                    "data": {
+                        "action": "buy",
+                        "volume": 0.19
+                    },
+                    "ts": "2025-12-18T02:48:00",
+                    "action": "buy"
+                }
+            }
+        },
+        {
+            "id": "node_1767213982811_lpegbu6qe",
+            "type": "brokerNode",
+            "position": {
+                "x": 922.4733889553763,
+                "y": 669.6761513704305
+            },
+            "data": {
+                "label": "brokerNode node",
+                "isExecuting": false,
+                "dataset": "SOL_USD_1m.csv",
+                "executionTime": 2,
+                "initialCapital": 10000,
+                "latestData": {
+                    "data": [
+                        {
+                            "timestamp": "2025-12-18T02:48:00",
+                            "action": "buy",
+                            "price": 123.73,
+                            "volume": 0.19,
+                            "dataset": "SOL_USD_1m.csv",
+                            "fee": 0.06112262,
+                            "cost": 23.56982262,
+                            "value": 23.5087
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "node_1767214001107_krrd0bb03",
+            "type": "dataReplayer",
+            "position": {
+                "x": 306.40450963216375,
+                "y": 483.04889686961917
+            },
+            "data": {
+                "label": "dataReplayer node",
+                "isExecuting": false,
+                "feedSnapshot": [
+                    {
+                        "open": 123.82,
+                        "high": 123.86,
+                        "low": 123.81,
+                        "close": 123.82,
+                        "vwap": 123.83690521399032,
+                        "volume": 677.811,
+                        "count": 398,
+                        "timestamp": "2025-12-18 02:44:00"
+                    },
+                    {
+                        "open": 123.82,
+                        "high": 123.88,
+                        "low": 123.7,
+                        "close": 123.73,
+                        "vwap": 123.7951282212988,
+                        "volume": 1585.657,
+                        "count": 1286,
+                        "timestamp": "2025-12-18 02:45:00"
+                    },
+                    {
+                        "open": 123.72,
+                        "high": 123.83,
+                        "low": 123.72,
+                        "close": 123.79,
+                        "vwap": 123.7790743774192,
+                        "volume": 1715.44,
+                        "count": 814,
+                        "timestamp": "2025-12-18 02:46:00"
+                    },
+                    {
+                        "open": 123.79,
+                        "high": 123.86,
+                        "low": 123.77,
+                        "close": 123.8,
+                        "vwap": 123.81559871705052,
+                        "volume": 1140.497,
+                        "count": 749,
+                        "timestamp": "2025-12-18 02:47:00"
+                    },
+                    {
+                        "open": 123.8,
+                        "high": 123.82,
+                        "low": 123.73,
+                        "close": 123.73,
+                        "vwap": 123.77682489124533,
+                        "volume": 454.923,
+                        "count": 477,
+                        "timestamp": "2025-12-18 02:48:00"
+                    }
+                ],
+                "activeFeeds": [
+                    "REPLAY_1m"
+                ],
+                "dataset": "SOL_USD_1m.csv",
+                "replayerStats": {
+                    "current": 2306,
+                    "total": 15000,
+                    "progress": 15.373333333333333,
+                    "is_paused": true,
+                    "is_finished": false,
+                    "elapsed": 953.3615508079529,
+                    "current_timestamp": 1766026080
+                },
+                "frequency": "instant",
+                "executionTime": 0.35,
+                "latestData": {
+                    "data": [
+                        {
+                            "open": 123.82,
+                            "high": 123.86,
+                            "low": 123.81,
+                            "close": 123.82,
+                            "vwap": 123.83690521399032,
+                            "volume": 677.811,
+                            "count": 398,
+                            "timestamp": "2025-12-18 02:44:00"
+                        },
+                        {
+                            "open": 123.82,
+                            "high": 123.88,
+                            "low": 123.7,
+                            "close": 123.73,
+                            "vwap": 123.7951282212988,
+                            "volume": 1585.657,
+                            "count": 1286,
+                            "timestamp": "2025-12-18 02:45:00"
+                        },
+                        {
+                            "open": 123.72,
+                            "high": 123.83,
+                            "low": 123.72,
+                            "close": 123.79,
+                            "vwap": 123.7790743774192,
+                            "volume": 1715.44,
+                            "count": 814,
+                            "timestamp": "2025-12-18 02:46:00"
+                        },
+                        {
+                            "open": 123.79,
+                            "high": 123.86,
+                            "low": 123.77,
+                            "close": 123.8,
+                            "vwap": 123.81559871705052,
+                            "volume": 1140.497,
+                            "count": 749,
+                            "timestamp": "2025-12-18 02:47:00"
+                        },
+                        {
+                            "open": 123.8,
+                            "high": 123.82,
+                            "low": 123.73,
+                            "close": 123.73,
+                            "vwap": 123.77682489124533,
+                            "volume": 454.923,
+                            "count": 477,
+                            "timestamp": "2025-12-18 02:48:00"
+                        }
+                    ],
+                    "ts": 1766026080,
+                    "pair": "REPLAY",
+                    "source": "replayer"
+                }
+            }
+        },
+        {
+            "id": "node_1767216291464_p1tevmeu9",
+            "type": "dataStore",
+            "position": {
+                "x": 1275.3380529012377,
+                "y": 648.956908729195
+            },
+            "data": {
+                "label": "dataStore node",
+                "executionTime": 15.19,
+                "isExecuting": false,
+                "latestData": {
+                    "data": [
+                        {
+                            "dataset": "SOL_USD_1m.csv",
+                            "revenue": null,
+                            "volume": 0,
+                            "fee": null,
+                            "timestamp": "2025-12-18T02:44:00",
+                            "value": null,
+                            "price": 123.82,
+                            "cost": null,
+                            "action": "pass"
+                        },
+                        {
+                            "dataset": "SOL_USD_1m.csv",
+                            "revenue": 98.7186624,
+                            "volume": 0.8,
+                            "fee": 0.2573376,
+                            "timestamp": "2025-12-18T02:45:00",
+                            "value": 98.976,
+                            "price": 123.72,
+                            "cost": null,
+                            "action": "sell"
+                        },
+                        {
+                            "dataset": "SOL_USD_1m.csv",
+                            "revenue": null,
+                            "volume": 0,
+                            "fee": null,
+                            "timestamp": "2025-12-18T02:46:00",
+                            "value": null,
+                            "price": 123.79,
+                            "cost": null,
+                            "action": "pass"
+                        },
+                        {
+                            "dataset": "SOL_USD_1m.csv",
+                            "revenue": 65.44340360000001,
+                            "volume": 0.53,
+                            "fee": 0.1705964,
+                            "timestamp": "2025-12-18T02:47:00",
+                            "value": 65.614,
+                            "price": 123.8,
+                            "cost": null,
+                            "action": "sell"
+                        },
+                        {
+                            "dataset": "SOL_USD_1m.csv",
+                            "revenue": null,
+                            "volume": 0.19,
+                            "fee": 0.06112262,
+                            "timestamp": "2025-12-18T02:48:00",
+                            "value": 23.5087,
+                            "price": 123.73,
+                            "cost": 23.56982262,
+                            "action": "buy"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "node_1767218063689_te6pnfqcv",
+            "type": "evalNode",
+            "position": {
+                "x": 1625.506014205549,
+                "y": 684.9691795998943
+            },
+            "data": {
+                "label": "evalNode node",
+                "isExecuting": false,
+                "executionTime": 34.77,
+                "latestData": {
+                    "distribution": [
+                        {
+                            "range_start": -0.03444351718382525,
+                            "range_end": -0.026657439687907434,
+                            "count": 3
+                        },
+                        {
+                            "range_start": -0.026657439687907434,
+                            "range_end": -0.01887136219198962,
+                            "count": 4
+                        },
+                        {
+                            "range_start": -0.01887136219198962,
+                            "range_end": -0.011085284696071805,
+                            "count": 13
+                        },
+                        {
+                            "range_start": -0.011085284696071805,
+                            "range_end": -0.0032992072001539925,
+                            "count": 93
+                        },
+                        {
+                            "range_start": -0.0032992072001539925,
+                            "range_end": 0.00448687029576382,
+                            "count": 328
+                        },
+                        {
+                            "range_start": 0.00448687029576382,
+                            "range_end": 0.012272947791681636,
+                            "count": 61
+                        },
+                        {
+                            "range_start": 0.012272947791681636,
+                            "range_end": 0.020059025287599445,
+                            "count": 1
+                        },
+                        {
+                            "range_start": 0.020059025287599445,
+                            "range_end": 0.02784510278351726,
+                            "count": 0
+                        },
+                        {
+                            "range_start": 0.02784510278351726,
+                            "range_end": 0.03563118027943508,
+                            "count": 0
+                        },
+                        {
+                            "range_start": 0.03563118027943508,
+                            "range_end": 0.04341725777535289,
+                            "count": 4
+                        }
+                    ],
+                    "metrics": {
+                        "total_trades": 507,
+                        "win_rate": 0.5029585798816568,
+                        "avg_return": -0.00025878965965112544
+                    }
+                }
+            }
+        },
+        {
+            "id": "node_1767218484344_3ia533u63",
+            "type": "readNode",
+            "position": {
+                "x": 1015.1751931876954,
+                "y": 156.66124051557313
+            },
+            "data": {
+                "label": "readNode node",
+                "isExecuting": false,
+                "executionTime": 0.33
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": "reactflow__edge-node_1767213981505_whn0wnus4-node_1767213982811_lpegbu6qe",
+            "source": "node_1767213981505_whn0wnus4",
+            "target": "node_1767213982811_lpegbu6qe",
+            "sourceHandle": null,
+            "targetHandle": null
+        },
+        {
+            "id": "reactflow__edge-node_1767214001107_krrd0bb03-node_1767213981505_whn0wnus4",
+            "source": "node_1767214001107_krrd0bb03",
+            "target": "node_1767213981505_whn0wnus4",
+            "sourceHandle": null,
+            "targetHandle": null
+        },
+        {
+            "id": "reactflow__edge-node_1767213982811_lpegbu6qe-node_1767216291464_p1tevmeu9",
+            "source": "node_1767213982811_lpegbu6qe",
+            "target": "node_1767216291464_p1tevmeu9",
+            "sourceHandle": null,
+            "targetHandle": null
+        },
+        {
+            "id": "reactflow__edge-node_1767216291464_p1tevmeu9-node_1767218063689_te6pnfqcv",
+            "source": "node_1767216291464_p1tevmeu9",
+            "target": "node_1767218063689_te6pnfqcv",
+            "sourceHandle": null,
+            "targetHandle": null
+        }
+    ]
+}

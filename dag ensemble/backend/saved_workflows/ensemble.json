@@ -1,0 +1,516 @@
+{
+    "nodes": [
+        {
+            "id": "node_2",
+            "type": "model",
+            "position": {
+                "x": 657.8998442279646,
+                "y": 541.9910056249031
+            },
+            "data": {
+                "label": "model node",
+                "executionTime": 29.16,
+                "isExecuting": false,
+                "inferenceResult": {
+                    "xgb_trend": 1,
+                    "xgb_next_close": 128.4217071533203,
+                    "xgb_atr": 0.12671180069446564
+                },
+                "modelName": "xgb_trend",
+                "requirements": null,
+                "modelNames": [
+                    "xgb_trend",
+                    "xgb_next_close",
+                    "xgb_atr"
+                ]
+            }
+        },
+        {
+            "id": "node_1765666225981_xz32zhv84",
+            "type": "model",
+            "position": {
+                "x": 1025.6639717380413,
+                "y": 561.371913167466
+            },
+            "data": {
+                "label": "model node",
+                "isExecuting": false,
+                "executionTime": 2.48,
+                "inferenceResult": {
+                    "xgb_meta_model": 2
+                },
+                "modelName": "xgb_meta_model",
+                "requirements": null
+            }
+        },
+        {
+            "id": "node_1765762552749_2nz6cghue",
+            "type": "tradingBrain",
+            "position": {
+                "x": 693.5862947260857,
+                "y": 830.008681551267
+            },
+            "data": {
+                "label": "tradingBrain node",
+                "isExecuting": false,
+                "executionTime": 2.4,
+                "scriptName": "simple_brain.py",
+                "latestData": {
+                    "data": {
+                        "action": "sell",
+                        "order_type": "market",
+                        "volume": 0.0001,
+                        "ts": "2025-12-17T00:27:00"
+                    },
+                    "ts": "2025-12-17T00:27:00",
+                    "action": "sell",
+                    "order_type": "market",
+                    "volume": 0.0001
+                }
+            }
+        },
+        {
+            "id": "node_1765763854966_iyz9fd16r",
+            "type": "dataReplayer",
+            "position": {
+                "x": -50.73465720324748,
+                "y": 366.57539388145585
+            },
+            "data": {
+                "label": "dataReplayer node",
+                "isExecuting": false,
+                "feedSnapshot": [],
+                "activeFeeds": [],
+                "executionTime": 0.33,
+                "dataset": "SOL_USD_1m.csv",
+                "frequency": "1s",
+                "pair": "SOL/USD",
+                "replayerStats": {
+                    "current": 719,
+                    "total": 15000,
+                    "progress": 4.793333333333334,
+                    "is_paused": true,
+                    "is_finished": false,
+                    "elapsed": 275.7833049297333,
+                    "current_timestamp": 1765930860
+                },
+                "latestData": {
+                    "data": [
+                        {
+                            "open": 128.46,
+                            "high": 128.47,
+                            "low": 128.4,
+                            "close": 128.44,
+                            "vwap": 128.4367325111832,
+                            "volume": 707.981,
+                            "count": 536,
+                            "timestamp": "2025-12-17 00:23:00"
+                        },
+                        {
+                            "open": 128.44,
+                            "high": 128.57,
+                            "low": 128.43,
+                            "close": 128.57,
+                            "vwap": 128.47125856820065,
+                            "volume": 1737.967,
+                            "count": 811,
+                            "timestamp": "2025-12-17 00:24:00"
+                        },
+                        {
+                            "open": 128.56,
+                            "high": 128.68,
+                            "low": 128.56,
+                            "close": 128.63,
+                            "vwap": 128.595884460946,
+                            "volume": 680.878,
+                            "count": 876,
+                            "timestamp": "2025-12-17 00:25:00"
+                        },
+                        {
+                            "open": 128.63,
+                            "high": 128.64,
+                            "low": 128.55,
+                            "close": 128.6,
+                            "vwap": 128.60305432587782,
+                            "volume": 929.557,
+                            "count": 775,
+                            "timestamp": "2025-12-17 00:26:00"
+                        },
+                        {
+                            "open": 128.6,
+                            "high": 128.6,
+                            "low": 128.47,
+                            "close": 128.51,
+                            "vwap": 128.51639149308332,
+                            "volume": 843.831,
+                            "count": 542,
+                            "timestamp": "2025-12-17 00:27:00"
+                        }
+                    ],
+                    "ts": 1765931220,
+                    "pair": "SOL/USD",
+                    "source": "replayer"
+                }
+            }
+        },
+        {
+            "id": "node_1767055164915_vp3qlg0um",
+            "type": "dataStore",
+            "position": {
+                "x": -49.14389497574723,
+                "y": 682.6713476395792
+            },
+            "data": {
+                "label": "dataStore node",
+                "isExecuting": false,
+                "executionTime": 16.34,
+                "latestData": {
+                    "data": [
+                        {
+                            "vwap": 128.4367325111832,
+                            "timestamp": "2025-12-17T00:23:00",
+                            "fee": 3.33944e-05,
+                            "high": 128.47,
+                            "open": 128.46,
+                            "dataset": "SOL_USD_1m.csv",
+                            "value": 0.012844000000000001,
+                            "count": 536,
+                            "volume": 707.981,
+                            "cost": null,
+                            "close": 128.44,
+                            "low": 128.4,
+                            "price": 128.44,
+                            "action": "sell",
+                            "revenue": 0.012810605600000002
+                        },
+                        {
+                            "vwap": 128.47125856820065,
+                            "timestamp": "2025-12-17T00:24:00",
+                            "fee": 3.34256e-05,
+                            "high": 128.57,
+                            "open": 128.44,
+                            "dataset": "SOL_USD_1m.csv",
+                            "value": 0.012856000000000001,
+                            "count": 811,
+                            "volume": 1737.967,
+                            "cost": 0.0128894256,
+                            "close": 128.57,
+                            "low": 128.43,
+                            "price": 128.56,
+                            "action": "buy",
+                            "revenue": null
+                        },
+                        {
+                            "vwap": 128.595884460946,
+                            "timestamp": "2025-12-17T00:25:00",
+                            "fee": 3.34438e-05,
+                            "high": 128.68,
+                            "open": 128.56,
+                            "dataset": "SOL_USD_1m.csv",
+                            "value": 0.012863,
+                            "count": 876,
+                            "volume": 680.878,
+                            "cost": null,
+                            "close": 128.63,
+                            "low": 128.56,
+                            "price": 128.63,
+                            "action": "sell",
+                            "revenue": 0.0128295562
+                        },
+                        {
+                            "vwap": 128.60305432587782,
+                            "timestamp": "2025-12-17T00:26:00",
+                            "fee": null,
+                            "high": 128.64,
+                            "open": 128.63,
+                            "dataset": "SOL_USD_1m.csv",
+                            "value": null,
+                            "count": 775,
+                            "volume": 929.557,
+                            "cost": null,
+                            "close": 128.6,
+                            "low": 128.55,
+                            "price": 128.6,
+                            "action": "pass",
+                            "revenue": null
+                        },
+                        {
+                            "vwap": 128.51639149308332,
+                            "timestamp": null,
+                            "fee": null,
+                            "high": 128.6,
+                            "open": 128.6,
+                            "dataset": null,
+                            "value": null,
+                            "count": 542,
+                            "volume": 843.831,
+                            "cost": null,
+                            "close": 128.51,
+                            "low": 128.47,
+                            "price": null,
+                            "action": null,
+                            "revenue": null
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "node_1767127952986_na8iblij7",
+            "type": "ifElseNode",
+            "position": {
+                "x": 296.3564652403478,
+                "y": 493.14249274990755
+            },
+            "data": {
+                "label": "ifElseNode node",
+                "executionTime": 0.81,
+                "isExecuting": false,
+                "code": "l = len(data_package[\"data\"])\nprint(l)\nif l == 720 or (l-720) % 100 == 0:\n   return False\nreturn True\n",
+                "latestData": {
+                    "data": [
+                        {
+                            "vwap": 128.4367325111832,
+                            "timestamp": "2025-12-17T00:23:00",
+                            "fee": 3.33944e-05,
+                            "high": 128.47,
+                            "open": 128.46,
+                            "dataset": "SOL_USD_1m.csv",
+                            "value": 0.012844000000000001,
+                            "count": 536,
+                            "volume": 707.981,
+                            "cost": null,
+                            "close": 128.44,
+                            "low": 128.4,
+                            "price": 128.44,
+                            "action": "sell",
+                            "revenue": 0.012810605600000002
+                        },
+                        {
+                            "vwap": 128.47125856820065,
+                            "timestamp": "2025-12-17T00:24:00",
+                            "fee": 3.34256e-05,
+                            "high": 128.57,
+                            "open": 128.44,
+                            "dataset": "SOL_USD_1m.csv",
+                            "value": 0.012856000000000001,
+                            "count": 811,
+                            "volume": 1737.967,
+                            "cost": 0.0128894256,
+                            "close": 128.57,
+                            "low": 128.43,
+                            "price": 128.56,
+                            "action": "buy",
+                            "revenue": null
+                        },
+                        {
+                            "vwap": 128.595884460946,
+                            "timestamp": "2025-12-17T00:25:00",
+                            "fee": 3.34438e-05,
+                            "high": 128.68,
+                            "open": 128.56,
+                            "dataset": "SOL_USD_1m.csv",
+                            "value": 0.012863,
+                            "count": 876,
+                            "volume": 680.878,
+                            "cost": null,
+                            "close": 128.63,
+                            "low": 128.56,
+                            "price": 128.63,
+                            "action": "sell",
+                            "revenue": 0.0128295562
+                        },
+                        {
+                            "vwap": 128.60305432587782,
+                            "timestamp": "2025-12-17T00:26:00",
+                            "fee": null,
+                            "high": 128.64,
+                            "open": 128.63,
+                            "dataset": "SOL_USD_1m.csv",
+                            "value": null,
+                            "count": 775,
+                            "volume": 929.557,
+                            "cost": null,
+                            "close": 128.6,
+                            "low": 128.55,
+                            "price": 128.6,
+                            "action": "pass",
+                            "revenue": null
+                        },
+                        {
+                            "vwap": 128.51639149308332,
+                            "timestamp": null,
+                            "fee": null,
+                            "high": 128.6,
+                            "open": 128.6,
+                            "dataset": null,
+                            "value": null,
+                            "count": 542,
+                            "volume": 843.831,
+                            "cost": null,
+                            "close": 128.51,
+                            "low": 128.47,
+                            "price": null,
+                            "action": null,
+                            "revenue": null
+                        }
+                    ],
+                    "condition_met": false
+                }
+            }
+        },
+        {
+            "id": "node_1767128493723_kees0sisz",
+            "type": "trainNode",
+            "position": {
+                "x": 290.0596807624638,
+                "y": 802.0342869923281
+            },
+            "data": {
+                "label": "trainNode node",
+                "isExecuting": false,
+                "modelName": "xgb_atr",
+                "executionTime": 2086.88,
+                "modelNames": [
+                    "xgb_atr",
+                    "xgb_next_close",
+                    "xgb_trend"
+                ],
+                "scriptNames": [
+                    "stacking.py"
+                ],
+                "scriptName": "stacking.py"
+            }
+        },
+        {
+            "id": "node_1767213638599_8i6xtxw0y",
+            "type": "brokerNode",
+            "position": {
+                "x": 1073.365249420012,
+                "y": 795.8050419502337
+            },
+            "data": {
+                "label": "brokerNode node",
+                "isExecuting": false,
+                "mode": "replay",
+                "dataset": "SOL_USD_1m.csv",
+                "executionTime": 3.4,
+                "latestData": {
+                    "data": [
+                        {
+                            "timestamp": "2025-12-17T00:27:00",
+                            "action": "sell",
+                            "price": 128.5,
+                            "volume": 0.0001,
+                            "dataset": "SOL_USD_1m.csv",
+                            "fee": 3.341e-05,
+                            "revenue": 0.012816590000000001,
+                            "value": 0.01285
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "node_1767220471848_xyjrvnf4z",
+            "type": "dataStore",
+            "position": {
+                "x": 1416.5932606912213,
+                "y": 543.4549930554159
+            },
+            "data": {
+                "label": "dataStore node",
+                "isExecuting": false,
+                "executionTime": 8.12,
+                "latestData": {
+                    "data": [
+                        {
+                            "timestamp": "2025-12-17T00:27:00",
+                            "action": "sell",
+                            "price": 128.5,
+                            "volume": 0.0001,
+                            "dataset": "SOL_USD_1m.csv",
+                            "fee": 3.341e-05,
+                            "revenue": 0.012816590000000001,
+                            "value": 0.01285
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "node_1767220482933_jmvijbdzg",
+            "type": "evalNode",
+            "position": {
+                "x": 1451.6033367187545,
+                "y": 928.840942398966
+            },
+            "data": {
+                "label": "evalNode node",
+                "isExecuting": false,
+                "latestData": {
+                    "distribution": [],
+                    "metrics": {}
+                },
+                "executionTime": 0.68
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": "reactflow__edge-node_1765666225981_xz32zhv84-node_1765762552749_2nz6cghue",
+            "source": "node_1765666225981_xz32zhv84",
+            "target": "node_1765762552749_2nz6cghue"
+        },
+        {
+            "id": "reactflow__edge-node_1765763854966_iyz9fd16r-node_1767055164915_vp3qlg0um",
+            "source": "node_1765763854966_iyz9fd16r",
+            "target": "node_1767055164915_vp3qlg0um"
+        },
+        {
+            "id": "reactflow__edge-node_1767055164915_vp3qlg0um-node_1767127952986_na8iblij7",
+            "source": "node_1767055164915_vp3qlg0um",
+            "target": "node_1767127952986_na8iblij7"
+        },
+        {
+            "id": "reactflow__edge-node_1767127952986_na8iblij7false-node_2",
+            "source": "node_1767127952986_na8iblij7",
+            "target": "node_2"
+        },
+        {
+            "id": "reactflow__edge-node_1767213638599_8i6xtxw0y-node_1767220471848_xyjrvnf4z",
+            "source": "node_1767213638599_8i6xtxw0y",
+            "target": "node_1767220471848_xyjrvnf4z",
+            "sourceHandle": null,
+            "targetHandle": null
+        },
+        {
+            "id": "reactflow__edge-node_1767220471848_xyjrvnf4z-node_1767220482933_jmvijbdzg",
+            "source": "node_1767220471848_xyjrvnf4z",
+            "target": "node_1767220482933_jmvijbdzg",
+            "sourceHandle": null,
+            "targetHandle": null
+        },
+        {
+            "id": "reactflow__edge-node_1765762552749_2nz6cghue-node_1767213638599_8i6xtxw0y",
+            "source": "node_1765762552749_2nz6cghue",
+            "target": "node_1767213638599_8i6xtxw0y",
+            "sourceHandle": null,
+            "targetHandle": null
+        },
+        {
+            "id": "reactflow__edge-node_2-node_1765666225981_xz32zhv84",
+            "source": "node_2",
+            "target": "node_1765666225981_xz32zhv84",
+            "sourceHandle": null,
+            "targetHandle": null
+        },
+        {
+            "id": "reactflow__edge-node_1767127952986_na8iblij7false-node_1767128493723_kees0sisz",
+            "source": "node_1767127952986_na8iblij7",
+            "target": "node_1767128493723_kees0sisz",
+            "sourceHandle": "false",
+            "targetHandle": null
+        }
+    ]
+}

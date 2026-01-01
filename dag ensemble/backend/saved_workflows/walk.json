@@ -1,0 +1,41 @@
+{
+    "nodes": [
+        {
+            "id": "node_1766881307045_fz96lw0cd",
+            "type": "walkForward",
+            "position": {
+                "x": 141.0163568388656,
+                "y": 198.74146408695057
+            },
+            "data": {
+                "label": "walkForward node",
+                "isExecuting": false,
+                "dataset": "SOL_USD_1m.csv",
+                "executionTime": 0.41,
+                "is_days": "10",
+                "oos_days": "03",
+                "step_days": "2"
+            }
+        },
+        {
+            "id": "node_1766881385539_awhwe3cmc",
+            "type": "featureEngineering",
+            "position": {
+                "x": 555.2845704917208,
+                "y": 126.35592921669621
+            },
+            "data": {
+                "label": "featureEngineering node",
+                "isExecuting": false,
+                "scriptName": "xgb_atr_features.py"
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": "reactflow__edge-node_1766881307045_fz96lw0cd-node_1766881385539_awhwe3cmc",
+            "source": "node_1766881307045_fz96lw0cd",
+            "target": "node_1766881385539_awhwe3cmc"
+        }
+    ]
+}
